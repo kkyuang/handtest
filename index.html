@@ -165,16 +165,19 @@
                     barWidth = "2%"
                 }
                 var labelTitle;
+                var color;
                 switch (prediction[i].className) {
                     case "male":
                         labelTitle = "남자손"
+                        color = "#1d2087"
                         break;
                     case "female":
                         labelTitle = "여자손"
+                        color = "#e3007f"
                         break;
                 }
                 var label = "<div class='animal-label d-flex align-items-center'>" + labelTitle + "</div>"
-                var bar = "<div class='bar-container position-relative container'><div class='" + prediction[i].className + "-box'></div><div class='d-flex justify-content-center align-items-center " + prediction[i].className + "-bar' style='width: " + barWidth + "; background-color:blue'><span class='d-block percent-text'>" + Math.round(prediction[i].probability.toFixed(2) * 100) + "%</span></div></div>"
+                var bar = "<div class='bar-container position-relative container'><div class='" + prediction[i].className + "-box'></div><div class='d-flex justify-content-center align-items-center " + prediction[i].className + "-bar' style='width: " + barWidth + "; background-color:" + color + "><span class='d-block percent-text'>" + Math.round(prediction[i].probability.toFixed(2) * 100) + "%</span></div></div>"
                 labelContainer.childNodes[i].innerHTML = label + bar;
             }
         }
