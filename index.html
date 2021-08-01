@@ -155,7 +155,7 @@
             }
             vartitle = "<div class='" + prediction[0].className + "-animal-title'>" + resultTitle + "</div>"
             varexplain = "<div class='animal-explain pt-2'>" + resultExplain + "</div>"
-            $('result-message').html(title + explain);
+            $('result-message').html(vartitle + varexplain);
             varbarWidth;
             for(let i = 0; i < maxPredictions; i++) {
             if (prediction[i].probability.toFixed(2) > 0.1) {
